@@ -1,7 +1,14 @@
+<<<<<<< Updated upstream
+import { createPinia } from 'pinia'
+import { createApp } from 'vue'
+import '@/assets/scss/_global.scss'
+import '@/assets/scss/_reset.scss'
+=======
 import './assets/main.css'
 
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
+>>>>>>> Stashed changes
 
 import App from './App.vue'
 import router from './router'

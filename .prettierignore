@@ -1,0 +1,19 @@
+# build
+dist
+dist-ssr
+coverage
+
+# dependencies
+node_modules
+
+# env
+*.env
+*.local
+
+# package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# git
+.husky
