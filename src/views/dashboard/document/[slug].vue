@@ -51,7 +51,7 @@ const imageError = ref(false);
 const isDisabledDelete = computed(() => {
   return !document.value || imageSrc.value === DefaultImage;
 });
-const imageSrc = ref(document.value.image);
+const imageSrc = ref(document.value?.image || DefaultImage);
 
 watch(
   document,
@@ -102,15 +102,22 @@ const handleErrorImage = (e) => {
 </script>
 
 <style lang="scss" scoped>
+@use '@/assets/scss/media' as *;
+
 .document {
   display: flex;
   padding: 30px;
   gap: 61px;
 
+  @include media(xl) {
+    flex-wrap: wrap;
+  }
+
   &__img {
     width: 424px;
     height: 286px;
     object-fit: cover;
+    flex-shrink: 0;
   }
 
   &__info {

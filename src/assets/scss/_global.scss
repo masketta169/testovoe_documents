@@ -1,4 +1,7 @@
+@use './fonts';
+
 body, #app {
     background-color: rgba(251, 251, 251, 1);
     height: 100vh;
+    font-family: 'Montserrat', sans-serif;
 }
