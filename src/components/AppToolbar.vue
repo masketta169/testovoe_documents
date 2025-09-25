@@ -45,6 +45,9 @@ const document = computed(() => documentsStore.getSelectedDocument);
 const fetchDocuments = async (query: string) => {
   try {
     isLoadingDocuments.value = true;
+    //FIXME: Реализация в случае, если работа только о store, запрос по id api не предоставляет
+    documentsStore.setSelectDocumentById(null);
+    router.push(`/dashboard`);
     const res = await DocumentService.getByQuery(query);
     documentsStore.setDocuments(res);
   } catch (e) {

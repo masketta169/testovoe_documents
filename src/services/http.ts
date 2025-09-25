@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { notifyService } from '@/services/notifyService';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -14,9 +15,17 @@ const api = axios.create({
 });
 
 api.interceptors.response.use(
-  response => response,
-  error => {
+  (response) => response,
+  (error) => {
     console.error('API Error:', error);
+
+    const message =
+      error.response?.data?.message ||
+      error.message ||
+      'Произошла ошибка при запросе';
+    console.log(message);
+    notifyService.show({ message, type: 'error', duration: 4000 });
+
     return Promise.reject(error);
   }
 );

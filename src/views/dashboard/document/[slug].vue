@@ -7,7 +7,7 @@
       @load="imageError = false"
     />
     <div class="document__info">
-      <WrapperActionItem :title="document?.name">
+      <WrapperActionItem :title="document?.name || ''">
         <div class="document__actions">
           <Button
             class="document__trigger"
