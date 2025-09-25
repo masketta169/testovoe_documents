@@ -95,7 +95,7 @@ const handleDelete = () => {
   console.log('Delete work');
 };
 
-const handleErrorImage = (e) => {
+const handleErrorImage = (e: Event) => {
   imageError.value = true;
   imageSrc.value = DefaultImage;
 };

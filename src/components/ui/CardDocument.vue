@@ -21,7 +21,7 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   image: null,
-  size: null,
+  size: undefined,
   isActive: false,
 });
 
