@@ -21,3 +21,6 @@ coverage/
 .env
 .env.local
 .env.*.local
+
+*.js
+*.js.map
